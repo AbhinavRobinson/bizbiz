@@ -2,17 +2,41 @@ import React from 'react';
 
 class Prices extends React.Component {
     state = {
-        currency:'USD'
+        currency: 'USD'
     }
 
     render() {
+        let list = '';
+
+        if (this.state.currency === 'USD') {
+            list = <li className="list-group-item">
+                Bitcoin rate for {this.props.bpi.bpi.USD.description} : <span class="badge badge-primary">{this.props.bpi.bpi.USD.code}</span> <strong>{this.props.bpi.bpi.USD.rate}</strong>
+            </li>
+        } else if (this.state.currency === 'GBP') {
+            list = <li className="list-group-item">
+                Bitcoin rate for {this.props.bpi.bpi.GBP.description} : <span class="badge badge-primary">{this.props.bpi.bpi.GBP.code}</span> <strong>{this.props.bpi.bpi.GBP.rate}</strong>
+            </li>
+        } else if (this.state.currency === 'EUR') {
+            list = <li className="list-group-item">
+                Bitcoin rate for {this.props.bpi.bpi.EUR.description} : <span class="badge badge-primary">{this.props.bpi.bpi.EUR.code}</span> <strong>{this.props.bpi.bpi.EUR.rate}</strong>
+            </li>
+        } else {
+            list = <li className="list-group-item">
+                Bitcoin rate for {this.props.bpi.bpi.USD.description} : <span class="badge badge-primary">{this.props.bpi.bpi.USD.code}</span> <strong>{this.props.bpi.bpi.USD.rate}</strong>
+            </li>
+        }
+
         return (
             <div>
                 <ul className="list-group">
-                    <li className="list-group-item">
-                        Bitcoin rate for {this.props.bpi.bpi.USD.description} : <span class="badge badge-primary">{this.props.bpi.bpi.USD.code}</span> <strong>{this.props.bpi.bpi.USD.rate}</strong>
-                    </li>
+                    {list}
                 </ul>
+                <br/>
+                <select onChange={e => this.setState({currency: e.target.value})} className="form-control">
+                    <option value="USD">US Dollor</option>
+                    <option value="GBP">GB Pound</option>
+                    <option value="EUR">Euro</option>
+                </select>
             </div>
         );
     }
