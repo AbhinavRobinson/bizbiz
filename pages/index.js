@@ -4,7 +4,7 @@ import Prices from '../components/Prices';
 
 const Index = (props) => (
     <Layout>
-        <div>
+        <div className="container">
             <h1>Welcome to BIZBIZ</h1>
             <Prices bpi = {props.bpi} />
         </div>
