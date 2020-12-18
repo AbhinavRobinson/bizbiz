@@ -20,10 +20,6 @@ class Prices extends React.Component {
             list = <li className="list-group-item">
                 Bitcoin rate for {this.props.bpi.bpi.EUR.description} : <span className="badge badge-primary">{this.props.bpi.bpi.EUR.code}</span> <strong>{this.props.bpi.bpi.EUR.rate}</strong>
             </li>
-        } else {
-            list = <li className="list-group-item">
-                Bitcoin rate for {this.props.bpi.bpi.USD.description} : <span className="badge badge-primary">{this.props.bpi.bpi.USD.code}</span> <strong>{this.props.bpi.bpi.USD.rate}</strong>
-            </li>
         }
 
         return (
