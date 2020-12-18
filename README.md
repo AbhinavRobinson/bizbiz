@@ -1,4 +1,4 @@
-# BIZBIZ - Currency Exchange
+# BIZBIZ - Bitcoin Price Checker
 
 Bizbiz is made with Next.js on React.
 
